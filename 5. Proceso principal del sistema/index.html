@@ -1,0 +1,276 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+</style>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketSports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <img class="bg" src="../Imagenes/fondo_azul.png" alt="">
+        <div class="menu container">
+            <a href="#" class="logo">TicketSports</a>
+            <img src="../Imagenes/logo.png" class="logo-2" alt="">
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="../Imagenes/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="../Imagenes/car.svg" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-3">Vaciar Carrito</a>
+                            <a href="#" id="comprar-carrito" class="btn-3">Realizar Comprar</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1><span>Bienvenido</span></h1>
+                <h1>Tu Entrada a los Mejores Estadios</h1>
+                <p>
+                    Adquiere tus entradas para fútbol, baloncesto, tenis y más de forma segura.
+                    Elige tu asiento en tiempo real y vive la pasión del deporte desde la grada.
+                </p>
+                <a href="#" class="btn-1">Informacion</a>
+            </div>
+            <div class="header-img">
+                <img src="../Imagenes/Mbappe-PNG-Real-Madrid-Football-Render-20.png" alt="">
+            </div>
+
+        </div>
+    </header>
+
+    <section class="breakfast container">
+        <h2>Aqui encontraras</h2>
+        <p>
+            Lo mejor del futbol Europeo
+        </p>
+        <div class="breakfast-content">
+            <div class="breakfast-1">
+                <img src="../Imagenes/Haaland-PNG-Manchester-City-Football-Render-7.png" alt="">
+                <h3>Premier League</h3>
+            </div>
+            <div class="breakfast-1">
+                <img src="../Imagenes/Vinicius-JR-Madrid-PNG-Football-Render.png" alt="">
+                <h3>La liga</h3>
+            </div>
+            <div class="breakfast-1">
+                <img src="../Imagenes/Lautaro-Martinez-Transparent-Free-PNG.png" alt="">
+                <h3>Serie A</h3>
+            </div>
+            <div class="breakfast-1">
+                <img src="../Imagenes/jamal_musiala.avif" alt="">
+                <h3>Bundesliga</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="info">
+
+        <img class="bg-2" src="../Imagenes/bg-2.png" alt="">
+        <div class="info-content container">
+
+            <div class="info-img">
+                <img src="../Imagenes/mbappe2.png">
+            </div>
+
+            <div class="info-txt">
+                <h2>Tu pasion, nuestro compromiso</h2>
+                <p>
+                    Nos dedicamos a conectar a los verdaderos fanáticos con los eventos que hacen vibrar el corazón. Por
+                    eso, te garantizamos un proceso de compra 100% seguro y entradas auténticas para que tu única
+                    preocupación sea disfrutar del pitazo inicial.
+                </p>
+                <a href="#" class="btn-1">Informacion</a>
+            </div>
+        </div>
+
+    </section>
+
+    <main class="products container">
+        <h2>Productos disponibles</h2>
+        <div class="box-container" id="lista-1">
+
+            <div class="box">
+                <img src="../Imagenes/nba.png" alt="">
+                <div class="products-txt">
+                    <h3>NBA</h3>
+                    <p>Básquetbol 🏀</p>
+                    <p class="precio">Estandar $90</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="1">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../Imagenes/ChatGPT Image 16 may 2026, 11_22_14.png" alt="">
+                <div class="products-txt">
+                    <h3>MLB</h3>
+                    <p>Béisbol ⚾</p>
+                    <p class="precio">Basico $80</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="2">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../Imagenes/atp-name-logo-symbol-white-tournament-open-men-tennis-association-design-abstract-illustration-with-blue-background-free-vector.jpg"
+                    alt="">
+                <div class="products-txt">
+                    <h3>ATP</h3>
+                    <p>Tenis 🥎</p>
+                    <p class="precio">Premium $710</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="3">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../Imagenes/nfl.png" alt="">
+                <div class="products-txt">
+                    <h3>NFL</h3>
+                    <p>Futbol Americano 🏈</p>
+                    <p class="precio">VIP $520</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="4">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../Imagenes/nhl.png" alt="">
+                <div class="products-txt">
+                    <h3>NHL</h3>
+                    <p>Hockey sobre hielo 🏒</p>
+                    <p class="precio">Aficionado $90</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="5">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../Imagenes/UFC_transparent.png" alt="">
+                <div class="products-txt">
+                    <h3>UFC</h3>
+                    <p>Artes Marciales Mixtas</p>
+                    <p class="precio">VIP $150</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="6">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../Imagenes/F1.png" alt="">
+                <div class="products-txt">
+                    <h3>F1</h3>
+                    <p>Formula Uno Racing 🏎️</p>
+                    <p class="precio">Estandar $180</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="7">Agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="../Imagenes/vpem_vertical_transparentbackground-01-2.png" alt="">
+                <div class="products-txt">
+                    <h3>Voleibol</h3>
+                    <p>Voleibol Internacional</p>
+                    <p class="precio">Aficionado $50</p>
+                    <a href="#" class="agregar-carrito btn-3" data-id="8">Agregar al carrito</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="btn-2" id="load-more">Cargar Mas</div>
+    </main>
+
+
+    <section class="app container">
+
+        <div class="app-txt">
+            <h2>Descarga nuestra app descrube ofertas</h2>
+            <p>
+                Compra tus boletos en segundos, recibe notificaciones cuando juegue tu equipo favorito y entra al
+                estadio sin filas ni papeles. Tu celular es tu entrada.
+            </p>
+            <div class="descarga">
+                <img src="../Imagenes/store1.png" alt="">
+                <img src="../Imagenes/store2.png" alt="">
+            </div>
+        </div>
+
+        <div class="app-img">
+            <img src="../Imagenes/ChatGPT Image 11 may 2026, 23_19_38.png" alt="">
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-content container">
+            <div class="link">
+            <h3>Deportes</h3>
+            <ul>
+                <li><a href="#">Fútbol</a></li>
+                <li><a href="#">Baloncesto</a></li>
+                <li><a href="#">Tenis</a></li>
+                <li><a href="#">Eventos Especiales</a></li>
+            </ul>
+        </div>
+
+        <div class="link">
+            <h3>Soporte</h3>
+            <ul>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Centros de Ayuda</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+        </div>
+
+        <div class="link">
+            <h3>Nosotros</h3>
+            <ul>
+                <li><a href="#">Quiénes Somos</a></li>
+                <li><a href="#">Trabaja con Nosotros</a></li>
+                <li><a href="#">Puntos de Venta</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+
+            <div class="link">
+                <h3>Aplicacion</h3>
+                <div class="descarga">
+                    <img src="../Imagenes/store1.png" alt="">
+                    <img src="../Imagenes/store2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

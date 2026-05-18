@@ -1,0 +1,74 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+</style>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketSports | Registro de Información</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-nav">
+        <div class="menu container">
+            <a href="../index.html" class="logo">TicketSports</a>
+            <img src="../Imagenes/logo.png" class="logo-2" alt="">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container form-main">
+        <div class="form-container">
+            <h2>Confirmación de tu Compra</h2>
+            <p>Por favor, ingresa los datos del titular para registrar la información de tus boletos deportivos.</p>
+
+            <form id="formulario-registro" action="../5. Proceso principal del sistema/index.html" method="GET">
+                
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    
+                    <div class="input-group">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" required placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cedula">Cédula o Identificación:</label>
+                        <input type="text" id="cedula" required placeholder="Ej. 131XXXXXXX">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" required placeholder="nombre@correo.com">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Método de Pago</legend>
+                    <div class="input-group">
+                        <label for="pago">Selecciona una opción de pago simulada:</label>
+                        <select id="pago" required>
+                            <option value="">-- Elige método de pago --</option>
+                            <option value="tarjeta">Tarjeta de Crédito / Débito</option>
+                            <option value="transferencia">Transferencia Bancaria Directa</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-enviar">Finalizar Registro y Procesar Boletos</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
