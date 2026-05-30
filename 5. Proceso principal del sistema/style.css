@@ -310,21 +310,21 @@ p {
     margin-bottom: 10px;
 }
 
-.product-txt .btn-3 {
+.products-txt .btn-3 {
     margin-top: auto;
 }
 
-.product-txt {
+.products-txt {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.product-txt p {
+.products-txt p {
     margin-bottom: 10px;
 }
 
-.product-txt .precio {
+.products-txt .precio {
     margin-bottom: auto;
     margin-bottom: 20px;
 }
@@ -585,4 +585,82 @@ p {
         align-items: center;
         text-align: center;
     }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.7);
+
+    z-index: 99999;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+
+    background: white;
+    width: 400px;
+    max-width: 90%;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.modal-content img {
+
+    width: 180px;
+    height: auto;
+
+    display: block;
+
+    margin: 15px auto;
+    object-fit: contain;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content h3 {
+    margin-top: 10px;
+}
+
+.modal-content p {
+    margin: 10px 0;
+}
+
+.modal-buttons {
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+
+    border: none;
+
+    background: #007BFF;
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.modal-buttons button:hover {
+    background: #0d2d74;
 }
