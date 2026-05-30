@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
 body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #007BFF, #0d2d74);
+    margin: 0;        /* Quita el espacio en blanco natural alrededor de la web */   
+    font-family: "Poppins", sans-serif;             /* Define el tipo de letra */
+    background: linear-gradient(135deg, #007BFF, #0d2d74);  /*Crea ese fondo elegante que pasa de un azul claro a un azul oscuro.*/
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ p {
 }
 
 .btn {
-    padding: 15px 30px;
+    padding: 15px 30px;         /* Quita el relleno interno */
     background-color: white;
     color: #007BFF;
     text-decoration: none;

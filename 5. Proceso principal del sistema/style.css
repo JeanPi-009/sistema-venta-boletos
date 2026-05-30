@@ -171,6 +171,7 @@ th, td {
     font-size: 16px;
     text-transform: capitalize;
     box-shadow: 0 0 20px rgb(0,0,0,0.2);
+    color: #FFFFFF;
 }
 
 .btn-1:hover {
@@ -585,4 +586,24 @@ p {
         align-items: center;
         text-align: center;
     }
+    /* Posicionamiento relativo para el contenedor del carrito */
+.submenu {
+    position: relative; 
+}
+
+/* Estilo de la burbuja del contador */
+.contador-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #ff0000; /* Color rojo llamativo */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%; /* Lo hace un círculo perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 }
