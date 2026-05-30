@@ -1,21 +1,24 @@
 let loadMoreBtn = document.querySelector('#load-more');
 let currentItem = 4;
 
-loadMoreBtn.onclick = () => {
+if (loadMoreBtn) {
+    loadMoreBtn.onclick = () => {
+        let boxes = [...document.querySelectorAll('.box-container .box')];
 
-    let boxes = [...document.querySelectorAll('.box-container .box')];
-    for(var i = currentItem; i< currentItem + 4; i++){
-        boxes[i].style.display = 'inline-block';
-    }
-    currentItem +=4;
-    if(currentItem >= boxes.length) {
-        loadMoreBtn.style.display = 'none'
-    }
+        for (let i = currentItem; i < currentItem + 4 && i < boxes.length; i++) {
+            boxes[i].style.display = 'inline-block';
+        }
+
+        currentItem += 4;
+
+        if (currentItem >= boxes.length) {
+            loadMoreBtn.style.display = 'none';
+        }
+    };
 }
 
-//Carrito
-
-const carrito = document.getElementById('carrito')
+const carrito = document.getElementById('carrito');
+const imgCarrito = document.getElementById('img-carrito'); // Icono del carrito
 const elementos1 = document.getElementById('lista-1');
 const lista = document.querySelector('#lista-carrito tbody');
 const vaciarcarritoBtn = document.getElementById('vaciar-carrito');
@@ -26,36 +29,42 @@ const modalTitulo = document.getElementById('modalTitulo');
 const modalPrecio = document.getElementById('modalPrecio');
 const confirmarCompra = document.getElementById('confirmarCompra');
 const cancelarCompra = document.getElementById('cancelarCompra');
-const modalCompra = document.getElementById("modalCompra");
-const modalExito = document.getElementById("modalExito");
-const resumenCompra = document.getElementById("resumenCompra");
+const contadorCarrito = document.getElementById('contador-carrito');
 let elementoSeleccionado = null;
 
+// Cargar todos los oyentes de eventos
 cargarEventListeners();
+
 function cargarEventListeners() {
     elementos1.addEventListener('click', comprarElemento);
     carrito.addEventListener('click', eliminarElemento);
     vaciarcarritoBtn.addEventListener('click', vaciarCarrito);
+    
+    // NUEVO: Abre y cierra el carrito al hacer clic en la imagen del icono
+    imgCarrito.addEventListener('click', toggleCarrito);
+}
+
+// Función para alternar visible/invisible el carrito sin borrar datos
+function toggleCarrito(e) {
+    e.preventDefault();
+    carrito.classList.toggle('mostrar-carrito');
+}
+
+function actualizarContador() {
+    const filas = lista.querySelectorAll('tr').length;
+    contadorCarrito.textContent = filas;
 }
 
 function comprarElemento(e) {
-
     e.preventDefault();
-
     const btn = e.target.closest('.agregar-carrito');
-
     if (!btn) return;
 
     elementoSeleccionado = btn.closest('.box');
 
-    modalImagen.src =
-        elementoSeleccionado.querySelector('img').src;
-
-    modalTitulo.textContent =
-        elementoSeleccionado.querySelector('h3').textContent;
-
-    modalPrecio.textContent =
-        elementoSeleccionado.querySelector('.precio').textContent;
+    modalImagen.src = elementoSeleccionado.querySelector('img').src;
+    modalTitulo.textContent = elementoSeleccionado.querySelector('h3').textContent;
+    modalPrecio.textContent = elementoSeleccionado.querySelector('.precio').textContent;
 
     modal.style.display = "flex";
 }
@@ -67,45 +76,36 @@ function leerDatosElemento(elemento) {
         precio: elemento.querySelector('.precio').textContent,
         id: elemento.querySelector('a').getAttribute('data-id')
     }
-    insertarCarrito(infoElemento)
+    insertarCarrito(infoElemento);
 }
 
 function insertarCarrito(elemento) {
-
     const row = document.createElement('tr');
     row.innerHTML = `
-
         <td>
             <img src="${elemento.imagen}" width=100 />
         </td>
-
         <td>
             ${elemento.titulo}  
-        </td>
-             
+        </td>     
         <td>
             ${elemento.precio}
         </td>
-
         <td>
             <a href="#" class="borrar" data-id="${elemento.id}" >X</a>
-
         </td>
     `;
 
     lista.appendChild(row);
+    actualizarContador();
 }
 
 function eliminarElemento(e) {
-
     e.preventDefault();
-    let elemento,
-        elementoId;
-
     if(e.target.classList.contains('borrar')) {
-        e.target.parentElement.parentElement.remove();
-        elemento = e.target.parentElement.parentElement;
-        elementoId = elemento.querySelector('a').getAttribute('data-id');
+        const fila = e.target.parentElement.parentElement;
+        fila.remove();
+        actualizarContador();
     }
 }
 
@@ -120,12 +120,14 @@ function vaciarCarrito(e) {
     while(lista.firstChild) {
         lista.removeChild(lista.firstChild);
     }
+    actualizarContador();
 
+    // Cierra la ventana del carrito tras vaciarlo
+    carrito.classList.remove('mostrar-carrito');
     alert('Carrito vaciado correctamente');
 }
 
 comprarBtn.addEventListener('click', realizarCompra);
-
 
 function realizarCompra(e) {
     e.preventDefault();
@@ -135,32 +137,31 @@ function realizarCompra(e) {
         return;
     }
 
+    // Cierra la ventana del carrito antes de redirigir
+    carrito.classList.remove('mostrar-carrito');
     window.location.href = "../4. Registro de informacion/index.html";
 }
 
 confirmarCompra.addEventListener('click', () => {
-
     if (!elementoSeleccionado) return;
 
     leerDatosElemento(elementoSeleccionado);
-
     modal.style.display = "none";
-
     elementoSeleccionado = null;
-
 });
-
 
 cancelarCompra.addEventListener('click', () => {
-
     modal.style.display = "none";
-
 });
 
+// Oyente global para cerrar ventanas emergentes
 window.addEventListener('click', (e) => {
-
     if (e.target === modal) {
         modal.style.display = "none";
     }
-
+    
+    // Opcional: Si el usuario hace clic afuera del carrito o del icono, el carrito se cierra solo para no estorbar
+    if (!carrito.contains(e.target) && e.target !== imgCarrito && !e.target.classList.contains('agregar-carrito') && !e.target.classList.contains('borrar')) {
+        carrito.classList.remove('mostrar-carrito');
+    }
 });

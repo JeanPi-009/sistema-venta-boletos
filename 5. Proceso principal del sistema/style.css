@@ -75,7 +75,7 @@ body{
 
 .menu label {
     cursor: pointer;
-    display: none
+    display: none;
 }
 
 .submenu {
@@ -97,20 +97,6 @@ body{
 .submenu #carrito {
     display: none;
 }
-
-.submenu:hover #carrito {
-    display: block;
-    position: absolute;
-    right: 0;
-    backdrop-filter: blur(10px);
-    top: (100% + 5px);
-    z-index: 1;
-    background-color: #77777797;
-    padding: 20px;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgb(0,0,0.2);
-}
-
 table {
     width: 100%;
 }
@@ -170,7 +156,8 @@ th, td {
     background-color: #007BFF;
     font-size: 16px;
     text-transform: capitalize;
-    box-shadow: 0 0 20px rgb(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    color: #FFFFFF;
 }
 
 .btn-1:hover {
@@ -300,10 +287,12 @@ p {
 .box img {
     width: 110px;
     height: 110px;
+    max-width: 100%;
     object-fit: contain;
     margin: 0 auto 10px auto;
     display: block;
 }
+
 .products-txt h3 {
     font-size: 20px;
     color: #1d1d1b;
@@ -326,7 +315,6 @@ p {
 
 .products-txt .precio {
     margin-bottom: auto;
-    margin-bottom: 20px;
 }
 
 .precio {
@@ -663,4 +651,33 @@ p {
 
 .modal-buttons button:hover {
     background: #0d2d74;
+}
+
+/* Estilo de la burbuja del contador */
+.contador-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #ff0000; /* Color rojo llamativo */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%; /* Lo hace un círculo perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mostrar-carrito {
+    display: block !important;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 45px; /* Ajustado para que quede perfectamente debajo del icono */
+    z-index: 10000;
+    background-color: #77777797;
+    padding: 20px;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
